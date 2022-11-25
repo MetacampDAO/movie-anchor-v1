@@ -62,22 +62,17 @@ pub fn update_movie_review(
   msg!("review title: {}", ctx.accounts.pda_account.title);
 
   msg!("checking if movie account is initialized");
-  if !ctx.accounts.pda_account.is_initialized() {
-      msg!("Account is not initialized");
-      return Err(ReviewError::UninitializedAccount.into());
-  }
+  // checks if account is initialized
 
-  if rating > 5 || rating < 1 {
-      msg!("Invalid Rating");
-      return Err(ReviewError::InvalidRating.into())
-  }
+  // checks if rating is 1 - 5
 
   msg!("Review before update:");
   msg!("Rating: {}", ctx.accounts.pda_account.rating);
   msg!("Description: {}", ctx.accounts.pda_account.description);
 
-  ctx.accounts.pda_account.rating = rating;
-  ctx.accounts.pda_account.description = description;
+  // updates pda_account's rating
+
+  // updates pda_account's description
 
   msg!("Review after update:");
   msg!("Rating: {}", ctx.accounts.pda_account.rating);
