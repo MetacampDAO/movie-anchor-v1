@@ -63,7 +63,7 @@ describe("movie-anchor", () => {
     console.log("storedReviewAccount.rating:", storedReviewAccount.rating);
     console.log("storedReviewAccount.title:", storedReviewAccount.title);
     assert.equal(storedReviewAccount.description, description);
-    assert.equal(storedReviewAccount.rating, rating);
+    assert.ok(storedReviewAccount.rating == rating);
     assert.equal(storedReviewAccount.title, movieTitle);
   });
 
@@ -94,7 +94,7 @@ describe("movie-anchor", () => {
     console.log("storedReviewAccount.rating:", storedReviewAccount.rating);
     console.log("storedReviewAccount.title:", storedReviewAccount.title);
     assert.equal(storedReviewAccount.description, description);
-    assert.equal(storedReviewAccount.rating, rating);
+    assert.ok(storedReviewAccount.rating == rating);
     assert.equal(storedReviewAccount.title, movieTitle);
   });
 });
